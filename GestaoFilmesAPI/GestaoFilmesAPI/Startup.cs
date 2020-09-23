@@ -70,11 +70,13 @@ namespace GestaoFilmesAPI
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "Gestão de Filmes V1");
             });
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
+
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
             {

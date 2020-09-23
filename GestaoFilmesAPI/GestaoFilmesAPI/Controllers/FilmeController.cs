@@ -96,7 +96,7 @@ namespace GestaoFilmesAPI.Controllers
             {
                 var result = await _filmeService.DeleteFilmeAsync(filmeId);
                 if (result.Succeeded)
-                    return Ok(result.Message);
+                    return Ok(new { message = result.Message });
                 else
                     return NotFound(result.Message);
             }
